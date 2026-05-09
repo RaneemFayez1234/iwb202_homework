@@ -1,0 +1,237 @@
+/* تنسيقات الجسم الأساسي للموقع */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    direction: rtl;
+    /* اتجاه عربي من اليمين لليسار */
+    text-align: right;
+    background-color: #f4f1ea;
+    background-image: radial-gradient(#d3cce3 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #2b1b17;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيقات العناوين  */
+h1,
+h2,
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #800000;
+    border-right: 6px solid #ffcc00;
+    padding-right: 15px;
+    margin-right: 10px;
+}
+
+/* توحيد تنسيق عناصر الإدخال */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="tel"] {
+    width: 90%;
+    max-width: 380px;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 3px solid #2b1b17;
+    border-radius: 15px 0 15px 0;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    box-shadow: 4px 4px 0px #800000;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+/* لما المستخدم يكبس عالمربع ليكتب جواه */
+input[type="text"]:focus,
+input[type="email"]:focus {
+    background-color: #ffffe0;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #800000;
+}
+
+/* تنسيقات الأزرار تبع الموقع */
+input[type="button"],
+input[type="submit"],
+button {
+    padding: 12px 30px;
+    background-color: #800000;
+    color: #ffcc00;
+    border: 3px solid #2b1b17;
+    border-radius: 0 20px 0 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 5px 5px 0px #2b1b17;
+    transition: all 0.1s;
+}
+
+/* شريط التنقل */
+.nav_bar {
+    background-color: #2b1b17;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* الروابط جوا شريط التنقل */
+.nav_bar a {
+    color: #ffcc00;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin-left: 20px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 10px 10px 0 0;
+    font-family: Arial, sans-serif;
+}
+
+/* الحاوية الأساسية  */
+.container {
+    padding: 35px;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    border: 4px solid #2b1b17;
+    border-radius: 30px 5px 30px 5px;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* الجداول */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 30px;
+    border: 4px solid #2b1b17;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* خلايا الجدول */
+th,
+td {
+    border-bottom: 2px solid #2b1b17;
+    border-left: 2px solid #2b1b17;
+    padding: 18px;
+    text-align: center;
+}
+
+th:last-child,
+td:last-child {
+    border-left: none;
+}
+
+/* شلنا الإطار السفلي لآخر سطر بالجدول */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* رأس الجدول */
+th {
+    background-color: #ffcc00;
+    color: #2b1b17;
+    font-size: 19px;
+    font-family: Arial, sans-serif;
+}
+
+/* خلفية بيضا للسطور العادية */
+.main_row {
+    background-color: #fff;
+}
+
+/* قسم تفاصيل الوجبة  */
+.meal_details {
+    display: none;
+    /* رح نظهره بالجيكويري لاحقاً */
+    background-color: #fffde7;
+}
+
+/* خلايا سطر التفاصيل */
+.meal_details td {
+    text-align: right;
+    border-bottom: 4px dashed #800000 !important;
+}
+
+/* صورة الوجبة اللي بتطلع بقسم التفاصيل */
+.meal_image {
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+    margin: 15px 0 15px 30px;
+    float: left;
+}
+
+/* تنسيقات القوائم النقطية لتفاصيل الوجبات */
+.meal_details ul {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-right: 25px;
+}
+
+.meal_details li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+/* تنسيقات رسائل الخطأ  */
+.error_msg {
+    color: #d93025;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    background-color: #ffe6e6;
+    padding: 4px 8px;
+    display: inline-block;
+    border: 2px dotted red;
+    transform: rotate(1deg);
+}
+
+/* قسم الفورم */
+#order_form_section {
+    display: none;
+    padding: 35px;
+    background-color: #f4f1ea;
+    border: 4px dashed #800000;
+    margin-top: 30px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox  */
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    accent-color: #800000;
+}
+
+/* الفوتر */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b1b17;
+    color: #ffcc00;
+    margin-top: 40px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+
+.easter_egg {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    font-size: 10px;
+    color: #624b44;
+    cursor: default;
+}

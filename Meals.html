@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>قائمة الوجبات | مطعم الأناقة</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="myFunctions.js"></script>
+</head>
+
+<body>
+
+    <!-- شريط التنقل  -->
+    <div class="nav_bar">
+        <a href="index.html">الرئيسية</a>
+        <a href="Meals.html">قائمة الوجبات</a>
+        <a href="AboutUs.html">من نحن</a>
+    </div>
+
+    <div class="container" style="max-width: 1000px;">
+
+        <!-- عنوان الصفحة -->
+        <h1 style="text-align: center;">قائمة أشهى المأكولات</h1>
+        <p style="text-align: center; font-size: 19px; font-weight: bold; font-family: Arial, sans-serif;">اختر ما يطيب
+            لك من قائمتنا المميزة، المحضرة بكل حب وعناية</p>
+
+        <!-- جدول الوجبات -->
+        <table id="meals_table">
+            <thead>
+                <tr>
+                    <th>الرمز</th>
+                    <th>العنوان</th>
+                    <th>السعر</th>
+                    <th>إظهار التفاصيل</th>
+                    <th>اختيار</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- الوجبات -->
+                <tr class="main_row">
+                    <td class="meal_code">SF-001</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        شاورما دجاج مميزة</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        150 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 15000)</span>
+                        <span class="meal_price_val" style="display:none;">150</span>
+                    </td>
+                    <!-- مربع لإظهار وإخفاء التفاصيل -->
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <!-- مربع لحتى الزبون يختار الوجبة بالطلب تبعو -->
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1645696301019-35adcb18cb5d?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة الشاورما" class="meal_image">
+                        <!--  تفاصيل الوجبة   -->
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> السوري</p>
+                            <p><strong>تصنيف الطعام:</strong> وجبات سريعة</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>200 غرام شرائح دجاج طازجة ومتبلة.</li>
+                                <li>3 ملاعق كبيرة من كريم الثوم الأصيل.</li>
+                                <li>حبتان من مخلل الخيار المقطع.</li>
+                                <li>خبز صاج محمص على السيخ.</li>
+                            </ul>
+                            <p><strong>الصلصة والمرفقات:</strong></p>
+                            <ul>
+                                <li>علبة صغيرة من صوص المايونيز بالثوم.</li>
+                                <li>كمية إضافية من البطاطا المقلية المقرمشة.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <!-- من هون ورايح نفس الشي مكرر لكل وجبة بس مع تغيير المحتوى والصور -->
+                <tr class="main_row">
+                    <td class="meal_code">SF-002</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        برغر لحم كلاسيك</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        200 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 20000)</span>
+                        <span class="meal_price_val" style="display:none;">200</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة البرغر" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الأمريكي</p>
+                            <p><strong>تصنيف الطعام:</strong> وجبات سريعة</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>150 غرام شريحة لحم عجل صافي مشوية.</li>
+                                <li>شريحتان من جبنة الشيدر المعتقة.</li>
+                                <li>أوراق خس طازجة ومغسولة.</li>
+                                <li>شريحة طماطم وحلقات بصل.</li>
+                                <li>خبز بريوش طري ومحمص بالزبدة.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة الباربيكيو المدخنة.</li>
+                                <li>صوص الكوكتيل الخاص بالمطعم.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-003</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        بيتزا نابولي</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        180 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 18000)</span>
+                        <span class="meal_price_val" style="display:none;">180</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة البيتزا" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الإيطالي</p>
+                            <p><strong>تصنيف الطعام:</strong> معجنات فاخرة</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>عجينة إيطالية تقليدية بتخمير بطيء.</li>
+                                <li>150 غرام جبنة موزاريلا طازجة مبشورة.</li>
+                                <li>بضعة أوراق من الريحان الأخضر الطازج.</li>
+                                <li>رشة من الأوريجانو البري.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة طماطم سان مارزانو الإيطالية.</li>
+                                <li>1 ملعقة صغيرة من زيت الزيتون البكر المضاف بعد الخبز.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-004</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        فروج مشوي عالفحم</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        450 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 45000)</span>
+                        <span class="meal_price_val" style="display:none;">450</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة الفروج" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الشرقي</p>
+                            <p><strong>تصنيف الطعام:</strong> أطباق رئيسية مشوية</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>1 فروج كامل طازج بوزن 1100 غرام منظف ومتبل.</li>
+                                <li>نصف كيلو بطاطا مقلية ومملحة.</li>
+                                <li>بصلة صغيرة مشوية مع حبة طماطم.</li>
+                                <li>رغيفان من الخبز المدهون بصلصة الفليفلة.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>علبتان من كريم الثوم الناعم.</li>
+                                <li>تتبيلة مؤلفة من الليمون، الزيت، الزعتر، والبابريكا المدخنة.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-005</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        طبق الفلافل الملكي</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        100 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 10000)</span>
+                        <span class="meal_price_val" style="display:none;">100</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1593010950669-02685718eeaa?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة الفلافل" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الشامي</p>
+                            <p><strong>تصنيف الطعام:</strong> إفطار ومقبلات شعبية</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>8 أقراص فلافل ساخنة ومقرمشة مصنوعة من الحمص والكزبرة.</li>
+                                <li>صحن صغير من الحمص الناعم المزيّن بزيت الزيتون.</li>
+                                <li>تشكيلة من المخللات (لفت، خيار) مع الفليفلة الخضراء.</li>
+                                <li>شرائح طماطم طازجة ونعناع.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة طرطور غنية محضرة من الطحينة، الثوم، وعصير الليمون.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-006</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        مندي لحم حضرمي</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        550 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 55000)</span>
+                        <span class="meal_price_val" style="display:none;">550</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1633383718081-22ac93e3db65?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة المندي" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الخليجي (اليمني)</p>
+                            <p><strong>تصنيف الطعام:</strong> أطباق أرز رئيسية</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>قطعة لحم غنم طازج ومطبوخ ببطء حتى الذوبان (300 غرام).</li>
+                                <li>أرز بسمتي طويل الحبة مطبوخ بمرق اللحم والزعفران.</li>
+                                <li>حفنة من المكسرات المحمصة (لوز وكاجو) والزبيب.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة الدقوس الحارة المكونة من الطماطم المفرومة، الثوم، الفلفل الأخضر الحار،
+                                    والكزبرة.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-007</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        كريسبي دجاج سوبر</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        220 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 22000)</span>
+                        <span class="meal_price_val" style="display:none;">220</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة الكريسبي" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> الغربي</p>
+                            <p><strong>تصنيف الطعام:</strong> وجبات سريعة مقلية</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>4 قطع من صدر الدجاج المغلف بخلطة البقسماط المقرمشة.</li>
+                                <li>وجبة بطاطا مقلية وسط.</li>
+                                <li>صحن صغير من سلطة الكولسلو المكونة من الملفوف والجزر.</li>
+                            </ul>
+                            <p><strong>الصلصات المرفقة:</strong></p>
+                            <ul>
+                                <li>1 علبة من صوص الشيدر السائل والساخن.</li>
+                                <li>1 علبة من صوص الخردل والعسل (Honey Mustard).</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-008</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        معكرونة بالبشاميل والجبنة</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        160 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 16000)</span>
+                        <span class="meal_price_val" style="display:none;">160</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1621996311210-91404c000673?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة المعكرونة" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> العالمي</p>
+                            <p><strong>تصنيف الطعام:</strong> أطباق معكرونة بالفرن</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>معكرونة (بيني) مطبوخة بنسبة الاستواء المثالية.</li>
+                                <li>150 غرام من اللحم المفروم المطهو مع البصل وجوزة الطيب.</li>
+                                <li>طبقة سميكة من الجبنة الموزاريلا المحمرة في الفرن.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة البشاميل الفرنسية الغنية المحضرة من الحليب والزبدة والطحين.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-009</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        سلطة سيزر دجاج</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        120 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 12000)</span>
+                        <span class="meal_price_val" style="display:none;">120</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة السلطة" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> العالمي</p>
+                            <p><strong>تصنيف الطعام:</strong> مقبلات باردة / سلطات</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>أوراق خس آيسبرغ مقطعة ومغسولة بعناية.</li>
+                                <li>شرائح من صدر الدجاج المشوي والمقطع بشكل طولي.</li>
+                                <li>مكعبات من الخبز المحمص بجبنة البارميزان (Croutons).</li>
+                                <li>رشة سخية من جبنة البارميزان المبشورة.</li>
+                            </ul>
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>صلصة السيزر الأصلية المكونة من المايونيز، الثوم، الخردل، وعصير الليمون.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+                <tr class="main_row">
+                    <td class="meal_code">SF-010</td>
+                    <td class="meal_name" style="font-weight: bold; font-size: 18px; font-family: Arial, sans-serif;">
+                        بطاطا مقلية بالجبنة</td>
+                    <td class="meal_price" style="color: #800000; font-weight: bold; line-height: 1.2;">
+                        80 ل.س<br>
+                        <span style="font-size: 12px; color: #777;">(القديم 8000)</span>
+                        <span class="meal_price_val" style="display:none;">80</span>
+                    </td>
+                    <td><input type="checkbox" class="show_details_cb"></td>
+                    <td><input type="checkbox" class="select_meal_cb"></td>
+                </tr>
+                <tr class="meal_details">
+                    <td colspan="5">
+                        <img src="https://images.unsplash.com/photo-1576107232684-1279f3908582?q=80&w=300&auto=format&fit=crop"
+                            alt="صورة البطاطا" class="meal_image">
+                        <div style="padding: 10px; font-family: Arial, sans-serif;">
+                            <p><strong>المطبخ:</strong> العالمي</p>
+                            <p><strong>تصنيف الطعام:</strong> مقبلات جانبية</p>
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>300 غرام من أصابع البطاطا الذهبية والمقرمشة.</li>
+                                <li>رشة ملح بحري وبهارات خاصة بالبطاطا.</li>
+                                <li>شرائح من مخلل الهلابينو الحار (حسب الطلب).</li>
+                            </ul>
+                            <p><strong>الصلصات:</strong></p>
+                            <ul>
+                                <li>كمية وافرة من صلصة جبنة الشيدر المذابة الساخنة المسكوبة فوق البطاطا.</li>
+                                <li>كاتشب ومايونيز جانبي.</li>
+                            </ul>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-- زر المتابعة -->
+        <div style="text-align: left; margin-top: 20px;">
+            <button id="btn_continue">متابعة الطلب <span style="font-size: 20px;">&#8592;</span></button>
+        </div>
+
+        <!-- قسم الفورم اللي بيظهر بعد المتابعة -->
+        <div id="order_form_section">
+            <h2 style="border-bottom: 2px dashed #ffcc00; padding-bottom: 10px;">معلومات التوصيل وتأكيد الطلب</h2>
+            <form id="order_form">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="full_name" style="font-family: Arial, sans-serif;">الاسم الكامل (أحرف عربية فقط)
+                            <span style="color:#800000; font-size:12px;">(إجباري*)</span>:</label><br>
+                        <input type="text" id="full_name" name="full_name" placeholder="مثال: أحمد السوري">
+                        <!-- مكان مشان تطلع رسالة الغلط إذا الزبون خربط (من الجيكويري) -->
+                        <span class="error_msg" id="err_full_name"></span>
+                    </div>
+
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="national_id" style="font-family: Arial, sans-serif;">الرقم الوطني <span
+                                style="color:#800000; font-size:12px;">(إجباري*)</span>:</label><br>
+                        <input type="text" id="national_id" name="national_id" required
+                            placeholder="11 خانة، يبدأ بـ 01 إلى 14">
+                        <span class="error_msg" id="err_national_id"></span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="birth_date" style="font-family: Arial, sans-serif;">تاريخ الولادة <span
+                                style="color:#800000; font-size:12px;">(إجباري*)</span>:</label><br>
+                        <input type="text" id="birth_date" name="birth_date" placeholder="dd-mm-yyyy">
+                        <span class="error_msg" id="err_birth_date"></span>
+                    </div>
+
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="mobile_num" style="font-family: Arial, sans-serif;">رقم الموبايل <span
+                                style="color:#800000; font-size:12px;">(إجباري*)</span>:</label><br>
+                        <input type="text" id="mobile_num" name="mobile_num" placeholder="09xxxxxxxx">
+                        <span class="error_msg" id="err_mobile_num"></span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="user_email" style="font-family: Arial, sans-serif;">البريد الإلكتروني <span
+                                style="color:#800000; font-size:12px;">(إجباري*)</span>:</label><br>
+                        <input type="text" id="user_email" name="user_email" placeholder="example@email.com">
+                        <span class="error_msg" id="err_user_email"></span>
+                    </div>
+                </div>
+
+                <!-- زر تأكيد الطلب النهائي -->
+                <div style="text-align: center; margin-top: 15px;">
+                    <button type="button" id="btn_submit_order" style="padding: 15px 50px; font-size: 20px;">إرسال الطلب
+                        الآن</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--  الفوترالي بيطلع تحت   -->
+    <div class="footer">
+        تقدمة طلاب الجامعة الافتراضية SVU 2026
+        <div class="easter_egg"> يا رب ننجح </div>
+    </div>
+
+</body>
+
+</html>
